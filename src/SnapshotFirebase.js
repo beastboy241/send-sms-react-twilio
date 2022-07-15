@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react";
 import firebase from "./firebase.js";
 import "firebase/firestore";
 import { Dropdown, Option } from "./Dropdown.js";
+//import { View, Button, StyleSheet } from "react-native";
+
 
 function SnapshotFirebase() {
   const [customers, setCustomers] = useState([]);
@@ -132,6 +134,9 @@ function SnapshotFirebase() {
   }
   
    //{loading ? <h1> Loading...</h1> : null }
+    //<button onClick={() => addCustomer()}> Check In </button>
+
+
 
   return (
     
@@ -154,14 +159,16 @@ function SnapshotFirebase() {
             </td>
             <td>
               <Dropdown 
-              onChange={handleSelect}>
+              onChange={handleSelect}
+              >
                 <Option selected value="Choose your service"/>
                 <Option value="Option 1"/>
                 <Option value="Option 2"/>
               </Dropdown>
-              
-            </td>
               <button onClick={() => addCustomer()}> Check In </button>
+        
+            </td>
+              
               
               
             
