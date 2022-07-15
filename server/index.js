@@ -17,11 +17,24 @@ app.use(bodyParser.json());
 app.use(pino);
 
 
+/* "10 * * * *"
+var today = new Date();
+  var time = today.getMinutes() + 2 + today.getHours() + "* * *" ;
+  console.log(time)
 
+const moment = require('moment');
+  const today = new Date();
+  function formatDate(today) {
+    return `${today.getMinutes() + 1} ${today.getHours()} * * *`;
+  }
+sendtest1 = cron.schedule(`*2 * * * *`, function() {
 
+*/
+  
   app.post('/api/messages', (req, res) => {
   res.header('Content-Type', 'application/json');
-  cron.schedule("0 20-21 * * *", function() {
+  
+ 
     console.log("running every 1 minute");
     client.messages
     .create({
@@ -33,16 +46,20 @@ app.use(pino);
     })
     .then(() => {
       res.send(JSON.stringify({ success: true }));
+      
     })
     .catch(err => {
       console.log(err);
       res.send(JSON.stringify({ success: false }));
     });
-  })
-    
-
 
 });
+
+
+
+
+    
+
 
 
 

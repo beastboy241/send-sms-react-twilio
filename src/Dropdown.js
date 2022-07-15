@@ -3,10 +3,9 @@ import {
   DropdownWrapper,
   StyledSelect,
   StyledOption,
-  StyledLabel,
-  StyledButton,
 } from "./styles.js";
-
+/* StyledLabel,
+  StyledButton, */
 export function Dropdown(props) {
   return (
     <DropdownWrapper
